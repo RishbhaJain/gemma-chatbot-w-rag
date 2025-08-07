@@ -402,7 +402,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Review audio settings
 
 ---
-
-**Built with ❤️ for Indian students and guidance counselors**
-
-*Enabling professional, evidence-based guidance with natural multilingual AI conversations* 
