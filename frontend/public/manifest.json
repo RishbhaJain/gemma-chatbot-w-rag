@@ -1,0 +1,99 @@
+{
+  "name": "Hinglish Chatbot - Enhanced Audio Processing",
+  "short_name": "Hinglish Chatbot",
+  "description": "Advanced AI chatbot supporting Hindi, English, and Hinglish with voice processing",
+  "theme_color": "#3B82F6",
+  "background_color": "#F8FAFC",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "start_url": "/",
+  "lang": "hi-en",
+  "dir": "ltr",
+  "categories": ["productivity", "communication", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-chat.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Hinglish Chat Interface"
+    },
+    {
+      "src": "/screenshots/mobile-voice.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Voice Recording"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Voice Chat",
+      "short_name": "Voice",
+      "description": "Start a voice conversation in Hinglish",
+      "url": "/?action=voice",
+      "icons": [
+        {
+          "src": "/icons/shortcut-voice.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Text Chat",
+      "short_name": "Text",
+      "description": "Start typing in Hindi or English",
+      "url": "/?action=text",
+      "icons": [
+        {
+          "src": "/icons/shortcut-text.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "features": [
+    "speech-recognition",
+    "speech-synthesis",
+    "offline-capable",
+    "multilingual"
+  ],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "prefer_related_applications": false,
+  "related_applications": []
+} 

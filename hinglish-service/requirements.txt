@@ -1,0 +1,52 @@
+# Core FastAPI and server dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+websockets==12.0
+python-multipart==0.0.6
+
+# Audio processing
+openai-whisper==20231117
+torch>=2.1.0
+torchaudio>=2.1.0
+
+# Text-to-Speech engines
+coqui-tts  # Coqui TTS
+gTTS==2.4.0
+pyttsx3==2.90
+
+# Indic Parler-TTS (Best for Indian languages)
+git+https://github.com/huggingface/parler-tts.git
+transformers>=4.35.0
+soundfile>=0.12.1
+
+# Audio handling
+pygame==2.5.2
+soundfile==0.12.1
+librosa==0.10.1
+
+# Language processing
+indic-nlp-library==0.91
+langdetect==1.0.9
+polyglot==16.07.04
+
+# Ollama client
+ollama==0.1.7
+
+# Utilities
+numpy
+scipy==1.11.4
+requests==2.31.0
+aiofiles==23.2.0
+python-json-logger==2.0.7
+
+# RAG System Dependencies
+chromadb>=0.4.18
+sentence-transformers>=2.2.2
+pdfplumber>=0.10.0
+langchain-text-splitters>=0.0.1
+langchain-community>=0.0.10
+PyPDF2>=3.0.1
+
+# Development
+pytest==7.4.3
+black==23.11.0 

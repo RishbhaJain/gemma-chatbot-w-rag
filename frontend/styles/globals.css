@@ -1,0 +1,283 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import fonts for Hindi support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Base layer overrides */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* Components layer */
+@layer components {
+  /* Hindi Font Class */
+  .font-hindi {
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded hover:bg-gray-500;
+  }
+
+  /* Chat Message Animations */
+  .message-enter {
+    @apply opacity-0 transform translate-y-4;
+    animation: slideInUp 0.3s ease-out forwards;
+  }
+
+  .message-user {
+    @apply bg-blue-500 text-white rounded-lg px-4 py-2 max-w-xs ml-auto;
+  }
+
+  .message-ai {
+    @apply bg-gray-100 text-gray-800 rounded-lg px-4 py-2 max-w-xs mr-auto;
+  }
+
+  .message-error {
+    @apply bg-red-100 text-red-800 rounded-lg px-4 py-2 max-w-xs mx-auto border border-red-200;
+  }
+
+  /* Recording Animation */
+  .recording-pulse {
+    position: relative;
+  }
+
+  .recording-pulse::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #ef4444;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: recordingPulse 1.5s ease-out infinite;
+    opacity: 0.7;
+  }
+
+  /* Audio Wave Animation */
+  .audio-wave {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .audio-bar {
+    width: 3px;
+    background: #3b82f6;
+    border-radius: 2px;
+    animation: audioWave 0.6s ease-in-out infinite;
+  }
+
+  .audio-bar:nth-child(2) { animation-delay: 0.1s; }
+  .audio-bar:nth-child(3) { animation-delay: 0.2s; }
+  .audio-bar:nth-child(4) { animation-delay: 0.3s; }
+
+  /* Language Toggle Styles */
+  .language-toggle {
+    @apply relative inline-flex items-center px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200;
+  }
+
+  .language-toggle.active {
+    @apply bg-blue-500 text-white;
+  }
+
+  .language-toggle:not(.active) {
+    @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
+  }
+
+  /* Voice Recorder Button */
+  .voice-btn {
+    @apply w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-opacity-50;
+  }
+
+  .voice-btn.idle {
+    @apply bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-300;
+  }
+
+  .voice-btn.recording {
+    @apply bg-red-500 text-white focus:ring-red-300;
+  }
+
+  .voice-btn.processing {
+    @apply bg-yellow-500 text-white cursor-not-allowed;
+  }
+
+  /* Settings Panel */
+  .settings-panel {
+    @apply fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50;
+  }
+
+  .settings-panel.open {
+    @apply translate-x-0;
+  }
+
+  .settings-panel.closed {
+    @apply translate-x-full;
+  }
+
+  /* Connection Status */
+  .connection-status {
+    @apply flex items-center space-x-2 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .connection-status.connected {
+    @apply bg-green-100 text-green-700;
+  }
+
+  .connection-status.connecting {
+    @apply bg-yellow-100 text-yellow-700;
+  }
+
+  .connection-status.disconnected {
+    @apply bg-red-100 text-red-700;
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20;
+  }
+}
+
+/* Utilities layer */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes recordingPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.33);
+    opacity: 0.7;
+  }
+  40%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.33);
+  }
+}
+
+@keyframes audioWave {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 16px;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-panel {
+    @apply w-full;
+  }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode .message-ai {
+    @apply bg-gray-800 text-gray-200;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+} 
